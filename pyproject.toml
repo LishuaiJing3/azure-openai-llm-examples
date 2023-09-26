@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "llm"
+version = "0.1.0"
+description = ""
+authors = ["Lishuai Jing <lishuai.jing@velux.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.300"
+fastapi = "^0.103.1"
+openai = "^0.28.0"
+beautifulsoup4 = "^4.12.2"
+python-dotenv = "^1.0.0"
+playwright = "^1.38.0"
+pypdf = "^3.16.2"
+tiktoken = "0.3.3"
+chromadb = "0.3.26"
+sentence-transformers = "^2.2.2"
+pydantic = "1.10.8"
+typing-extensions = "4.5.0"
+google-search-results = "^2.4.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

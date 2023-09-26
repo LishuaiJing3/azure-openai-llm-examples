@@ -1,0 +1,4 @@
+virtual-env
+.env
+.chroma
+__pycache__
