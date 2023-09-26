@@ -1,0 +1,1 @@
+Tis repo is used to show case how to use azure openai service with vectordb, huggingface, langchain. 

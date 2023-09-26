@@ -1,19 +1,21 @@
-#%%
+# %%
 import os
 import dotenv
+
 dotenv.load_dotenv()
 # get base url, deployment name, and api key from .env file
 BASE_URL = os.getenv("BASE_URL")
 API_KEY = os.getenv("API_KEY")
 DEPLOYMENT = os.getenv("DEPLOYMENT_GPT_3")
-#%%
+# %%
 from utils.AzOpenaiLLM import AzureOpenAIModel
+
 llm_init = AzureOpenAIModel(BASE_URL, API_KEY, DEPLOYMENT, "gpt-35-turbo")
 llm = llm_init.get_llm()
 llm("Tell me a joke")
 print(llm)
 llm("Tell me a joke")
-#%%
+# %%
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import VectorDBQA
@@ -28,19 +30,15 @@ text_splitter = CharacterTextSplitter(chunk_size=250, chunk_overlap=10)
 texts = text_splitter.split_documents(pages)
 # Now we'll create embeddings for our document so we can store it in a vector store and feed the data into an LLM. We'll use the sentence-transformers model for out embeddings. https://www.sbert.net/docs/pretrained_models.html#sentence-embedding-models/
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
-embeddings = HuggingFaceEmbeddings(
-    model_name=model_name
-)
+embeddings = HuggingFaceEmbeddings(model_name=model_name)
 # Finally we make our Index using chromadb and the embeddings LLM
-chromadb_index = Chroma.from_documents(
-    texts, embeddings
-)
+chromadb_index = Chroma.from_documents(texts, embeddings)
 
-#%%
+# %%
 # build qa model
-qa = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff",vectorstore=chromadb_index)
-#%%
-query = "How much money can generative AI contribute?" 
+qa = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=chromadb_index)
+# %%
+query = "How much money can generative AI contribute?"
 qa.run(query)
-query = "What is the GDP for United kingdom?" 
+query = "What is the GDP for United kingdom?"
 qa.run(query)
