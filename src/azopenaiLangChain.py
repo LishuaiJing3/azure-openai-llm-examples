@@ -16,8 +16,6 @@ llm("Tell me a joke")
 print(llm)
 
 llm("Tell me a joke")
-
-print(llm("Tell me a joke"))
 print(llm)
 # %%
 from langchain import PromptTemplate, LLMChain

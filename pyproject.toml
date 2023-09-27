@@ -2,7 +2,7 @@
 name = "llm"
 version = "0.1.0"
 description = ""
-authors = ["Lishuai Jing <lishuai.jing@velux.com>"]
+authors = ["Lishuai Jing <lishuai.jing@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -20,6 +20,8 @@ sentence-transformers = "^2.2.2"
 pydantic = "1.10.8"
 typing-extensions = "4.5.0"
 google-search-results = "^2.4.2"
+google-api-python-client = "^2.101.0"
+apify-client = "^1.4.1"
 
 
 [tool.poetry.group.dev.dependencies]
