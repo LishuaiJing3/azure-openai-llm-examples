@@ -1,5 +1,7 @@
 # %%
 import os
+from utils.AzOpenaiLLM import AzureOpenAIModel
+from langchain import PromptTemplate, LLMChain
 import dotenv
 
 dotenv.load_dotenv()
@@ -8,7 +10,6 @@ BASE_URL = os.getenv("BASE_URL")
 API_KEY = os.getenv("API_KEY")
 DEPLOYMENT = os.getenv("DEPLOYMENT_GPT_3")
 # %%
-from utils.AzOpenaiLLM import AzureOpenAIModel
 
 llm_init = AzureOpenAIModel(BASE_URL, API_KEY, DEPLOYMENT, "gpt-35-turbo")
 llm = llm_init.get_llm()
@@ -18,7 +19,6 @@ print(llm)
 llm("Tell me a joke")
 print(llm)
 # %%
-from langchain import PromptTemplate, LLMChain
 
 template = """
 You are a support assistant. Answer the following questions to the best of your ability. Provide only answer or nothing else.
