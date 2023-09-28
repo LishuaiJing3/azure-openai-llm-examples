@@ -1,4 +1,5 @@
 virtual-env
 .env
 .chroma
+chroma*
 __pycache__

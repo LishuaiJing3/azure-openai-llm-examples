@@ -1,5 +1,9 @@
 # %%
 import os
+
+from utils.AzOpenaiLLM import AzureOpenAIModel
+from langchain.agents import load_tools, initialize_agent, AgentType
+
 import dotenv
 
 dotenv.load_dotenv()
@@ -8,7 +12,7 @@ BASE_URL = os.getenv("BASE_URL")
 API_KEY = os.getenv("API_KEY")
 DEPLOYMENT = os.getenv("DEPLOYMENT_GPT_3")
 # %%
-from utils.AzOpenaiLLM import AzureOpenAIModel
+
 
 llm_init = AzureOpenAIModel(BASE_URL, API_KEY, DEPLOYMENT, "gpt-35-turbo")
 llm = llm_init.get_llm()
@@ -17,7 +21,6 @@ print(llm)
 # %%
 SERP_API_KEY = os.getenv("SERPAPI_API_KEY")
 # %%
-from langchain.agents import load_tools, initialize_agent, AgentType
 
 # initialize the agent
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
