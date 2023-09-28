@@ -1,5 +1,6 @@
 # %%
 from src.utils.AzOpenaiLLM import AzureOpenAIChatModel
+
 # import databricksConn
 from src.utils.databrickConn import databricksConn
 from langchain.agents import create_sql_agent
@@ -39,3 +40,5 @@ agent = create_sql_agent(llm=llm, toolkit=toolkit, top_k=2, verbose=True)
 question = "What is the largest fare amount?"
 results = agent.run(question)
 print(results)
+
+# %%
