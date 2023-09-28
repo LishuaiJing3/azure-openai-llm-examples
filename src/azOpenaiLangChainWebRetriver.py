@@ -27,7 +27,7 @@ model_name = "sentence-transformers/all-MiniLM-L6-v2"
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 
 # Vectorstore
-vectorstore = Chroma(embedding_function=embeddings, persist_directory="./chroma_db_oai")
+vectorstore = Chroma(embedding_function=embeddings, persist_directory="./chroma_oai")
 
 # %%
 # Search

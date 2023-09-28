@@ -29,7 +29,7 @@ class AzureOpenAIChatModel:
 
 
 class AzureOpenAIModel:
-    """Azure OpenAI model: GPT-3."""
+    """Azure OpenAI general purpose model."""
 
     def __init__(
         self,

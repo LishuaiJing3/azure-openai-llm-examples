@@ -1,5 +1,13 @@
 # %%
 import os
+
+from utils.AzOpenaiLLM import AzureOpenAIModel
+from langchain.document_loaders import PyPDFLoader
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.chains import VectorDBQA
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import Chroma
 import dotenv
 
 dotenv.load_dotenv()
@@ -8,21 +16,10 @@ BASE_URL = os.getenv("BASE_URL")
 API_KEY = os.getenv("API_KEY")
 DEPLOYMENT = os.getenv("DEPLOYMENT_GPT_3")
 # %%
-from utils.AzOpenaiLLM import AzureOpenAIModel
-
 llm_init = AzureOpenAIModel(BASE_URL, API_KEY, DEPLOYMENT, "gpt-35-turbo")
 llm = llm_init.get_llm()
 llm("Tell me a joke")
-print(llm)
-llm("Tell me a joke")
 # %%
-from langchain.document_loaders import PyPDFLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains import VectorDBQA
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import Chroma
-
 doc_loader = PyPDFLoader("../data/genAIEco.pdf")
 pages = doc_loader.load_and_split()
 # First we split the data into manageable chunks to store as vectors. There isn't an exact way to do this, more chunks means more detailed context, but will increase the size of our vectorstore.
