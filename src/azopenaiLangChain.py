@@ -1,6 +1,6 @@
 # %%
 import os
-from utils.AzOpenaiLLM import AzureOpenAIModel
+from src.utils.AzOpenaiLLM import AzureOpenAIModel
 from langchain import PromptTemplate, LLMChain
 import dotenv
 
