@@ -1,8 +1,9 @@
 # %%
 from src.utils.AzOpenaiLLM import AzureOpenAIChatModel
+# import databricksConn
+from src.utils.databrickConn import databricksConn
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
-from langchain.utilities import SQLDatabase
 
 import os
 import dotenv
@@ -27,14 +28,8 @@ db_warehouse_id = os.getenv("DATABRICKS_SQL_WAREHOUSE_ID")
 db_catalog = "samples"
 db_schema = "nyctaxi"
 
-# db_cluster_id
-db = SQLDatabase.from_databricks(
-    catalog=db_catalog,
-    schema=db_schema,
-    host=db_host,
-    api_token=db_token,
-    warehouse_id=db_warehouse_id,
-)
+db_init = databricksConn(db_host, db_token, db_warehouse_id, db_catalog, db_schema)
+db = db_init.get_db()
 
 # %%
 
