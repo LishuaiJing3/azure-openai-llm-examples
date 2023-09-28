@@ -28,7 +28,7 @@ pages = doc_loader.load_and_split()
 # First we split the data into manageable chunks to store as vectors. There isn't an exact way to do this, more chunks means more detailed context, but will increase the size of our vectorstore.
 text_splitter = CharacterTextSplitter(chunk_size=250, chunk_overlap=10)
 texts = text_splitter.split_documents(pages)
-# Now we'll create embeddings for our document so we can store it in a vector store and feed the data into an LLM. We'll use the sentence-transformers model for out embeddings. https://www.sbert.net/docs/pretrained_models.html#sentence-embedding-models/
+# Now we'll create embeddings for our document so we can store it in a vector store and feed the data into an LLM. 
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 # Finally we make our Index using chromadb and the embeddings LLM

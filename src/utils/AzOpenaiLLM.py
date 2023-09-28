@@ -1,15 +1,7 @@
-import os
-import dotenv
-
-dotenv.load_dotenv()
-
-
 class AzureOpenAIChatModel:
-    """Azure OpenAI model: GPT-4."""
+    """Azure OpenAI Chat model."""
 
-    def __init__(
-        self, base_url="BASE_URL", api_key="API_KEY", deployment="DEPLOYMENT_GPT_4"
-    ):
+    def __init__(self, base_url="BASE_URL", api_key="API_KEY", deployment="DEPLOYMENT_GPT_4", model_name="gpt-4"):
         """Initializes the Azure OpenAI model."""
 
         from langchain.chat_models import AzureChatOpenAI
@@ -26,6 +18,7 @@ class AzureOpenAIChatModel:
             openai_api_version="2023-05-15",
             deployment_name=deployment,
             openai_api_key=api_key,
+            model_name=model_name,
             openai_api_type="azure",
         )
 
