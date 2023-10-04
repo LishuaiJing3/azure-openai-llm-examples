@@ -291,6 +291,17 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "better-profanity"
+version = "0.7.0"
+description = "Blazingly fast cleaning swear words (and their leetspeak) in strings"
+optional = false
+python-versions = "==3.*"
+files = [
+    {file = "better_profanity-0.7.0-py3-none-any.whl", hash = "sha256:bd4c529ea6aa2db1aaa50524be1ed14d0fe5c664f1fd88c8bc388c7e9f9f00e8"},
+    {file = "better_profanity-0.7.0.tar.gz", hash = "sha256:8a6fdc8606d7471e7b5f6801917eca98ec211098262e82f62da4f5de3a73145b"},
+]
+
+[[package]]
 name = "cachetools"
 version = "5.3.1"
 description = "Extensible memoizing collections and decorators"
@@ -4231,4 +4242,4 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "7d53971bb5e5f46a74cfb46040771c333fd393f3c665b091b4a2818c35b2967d"
+content-hash = "7b76d7425a828bc8eddcb6cb9ed8db28682ad8ddd7090d6d429acdf3f8a9a4fc"

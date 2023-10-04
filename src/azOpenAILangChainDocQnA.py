@@ -1,7 +1,7 @@
 # %%
 import os
 
-from src.utils.AzOpenaiLLM import AzureOpenAIModel
+from src.utils.azOpenAILLM import AzureOpenAIModel
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import VectorDBQA

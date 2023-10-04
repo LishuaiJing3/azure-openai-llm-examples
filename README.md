@@ -30,6 +30,9 @@ When using gpt-3-turbo general purpose models, It seems the output is quite diff
 ### Pkg dependencies
 It can cause many issues is the packages are not compatible. Double check pkg dependencies.  
 
+## Issues:
+- Cannot connect to Azure OpenAI service. This can happen when firwarewalls are enabled. try a different network if you run into this issue.  
+
 ## References
 - [Azure OpenAI service](https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart?tabs=command-line&pivots=programming-language-studio)
 - [Langchain Docs](https://python.langchain.com/docs/integrations/providers/databricks)

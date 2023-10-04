@@ -25,6 +25,7 @@ apify-client = "^1.4.1"
 html2text = "^2020.1.16"
 databricks-sql-connector = "^2.9.3"
 langchain-experimental = "^0.0.22"
+better-profanity = "^0.7.0"
 
 
 [tool.poetry.group.dev.dependencies]

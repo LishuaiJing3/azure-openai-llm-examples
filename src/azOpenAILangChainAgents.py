@@ -1,7 +1,7 @@
 # %%
 import os
 
-from src.utils.AzOpenaiLLM import AzureOpenAIModel
+from src.utils.azOpenAILLM import AzureOpenAIModel
 from langchain.agents import load_tools, initialize_agent, AgentType
 
 import dotenv

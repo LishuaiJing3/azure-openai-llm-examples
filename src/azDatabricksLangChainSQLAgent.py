@@ -1,5 +1,5 @@
 # %%
-from src.utils.AzOpenaiLLM import AzureOpenAIChatModel
+from src.utils.azOpenAILLM import AzureOpenAIChatModel
 
 # import databricksConn
 from src.utils.databrickConn import databricksConn
