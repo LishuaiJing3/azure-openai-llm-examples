@@ -50,14 +50,16 @@ customer_support_chain = LLMChain(
     prompt=customer_support_prompt_template,
     output_key="Customer_support_replied:",
     verbose=False,
-)  # Now that we've chained the LLM and prompt, the output of the formatted prompt will pass directly to the LLM.
+)  # Now that we've chained the LLM and prompt, the output of the formatted 
+#prompt will pass directly to the LLM.
 
 # here we test the customer support chain response
 customer_support_reply = customer_support_chain.run(
     {"sentiment": random_sentiment, "product_review": product_review}
 )
 
-# clean the review up using profanity. You can add some bad words here to test what is happening:
+# clean the review up using profanity. You can add some bad words here to test 
+# what is happening:
 cleaned_customer_support_reply = profanity.censor(customer_support_reply)
 print(f"Moderator said:{cleaned_customer_support_reply}")
 # %%

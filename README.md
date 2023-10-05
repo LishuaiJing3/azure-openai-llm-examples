@@ -1,6 +1,6 @@
 ## Disclaimer
 
-This code repo is mainly used for sharing code and experiences. It is not production-ready code even through many coding standards and good practices have been applied. Take this as an inspiration and hope you can find some of it be useful for your projects. 
+This repo is mainly used for sharing code and experiences. It is not production-ready code even through many coding standards and good practices have been applied. Take this as an inspiration and hope you can find some of it be useful for your projects. 
 
 There are many parameters that you can tune to control the LLM, I will leave it to your effort to find the best config for your projects.
 
@@ -19,7 +19,7 @@ For vector DB, Chroma db is used and huggingface embeddings are used for creatin
 
 ## Prerequisites
 
-- (Azure openAI service and deployments)[https://learn.microsoft.com/en-us/azure/ai-services/openai/]
+- [Azure openAI service and deployments](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - Hugging face account (Optional, only if some of the boiler code requires it)
 - Google search API (Optional, only if some of the boiler code requires it) 
 - Azure databricks SQL warehouses (Optional, only if some of the boiler code requires it)

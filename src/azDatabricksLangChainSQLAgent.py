@@ -29,13 +29,16 @@ db_warehouse_id = os.getenv("DATABRICKS_SQL_WAREHOUSE_ID")
 db_catalog = "samples"
 db_schema = "nyctaxi"
 
-db_init = databricksConn(db_host, db_token, db_warehouse_id, db_catalog, db_schema)
+db_init = databricksConn(db_host, db_token, 
+                         db_warehouse_id, 
+                         db_catalog, db_schema)
 db = db_init.get_db()
 
 # %%
 
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
-# Chat specific model is needed otherwise the reuslt has issues with parsing errors
+# Chat specific model is needed otherwise the reuslt
+# has issues with parsing errors
 agent = create_sql_agent(llm=llm, toolkit=toolkit, top_k=2, verbose=True)
 question = "What is the largest fare amount?"
 results = agent.run(question)
