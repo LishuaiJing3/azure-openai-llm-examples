@@ -3,8 +3,9 @@ from langchain.vectorstores import Chroma
 from langchain.utilities import GoogleSearchAPIWrapper
 from langchain.retrievers.web_research import WebResearchRetriever
 from langchain.embeddings import HuggingFaceEmbeddings
-from src.utils.AzOpenaiLLM import AzureOpenAIModel
 from langchain.chains import RetrievalQAWithSourcesChain
+
+from src.utils.azOpenAILLM import AzureOpenAIModel
 import os
 import dotenv
 import logging

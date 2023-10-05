@@ -1,6 +1,6 @@
 ## Disclaimer
 
-This code repo is mainly used for sharing code and experiences. It is not production-ready code even through many coding standards and good practices have been applied. Take this as an inspiration and hope you can find some of it be useful for your projects. 
+This repo is mainly used for sharing code and experiences. It is not production-ready code even through many coding standards and good practices have been applied. Take this as an inspiration and hope you can find some of it be useful for your projects. 
 
 There are many parameters that you can tune to control the LLM, I will leave it to your effort to find the best config for your projects.
 
@@ -19,7 +19,7 @@ For vector DB, Chroma db is used and huggingface embeddings are used for creatin
 
 ## Prerequisites
 
-- (Azure openAI service and deployments)[https://learn.microsoft.com/en-us/azure/ai-services/openai/]
+- [Azure openAI service and deployments](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - Hugging face account (Optional, only if some of the boiler code requires it)
 - Google search API (Optional, only if some of the boiler code requires it) 
 - Azure databricks SQL warehouses (Optional, only if some of the boiler code requires it)
@@ -29,6 +29,9 @@ For vector DB, Chroma db is used and huggingface embeddings are used for creatin
 When using gpt-3-turbo general purpose models, It seems the output is quite difficult to control and many times it results in OutputParserException. This is due to that AzureChatOpenAI is needed, if other type of model (e.g. AzureOpenAI) is used, then it will cause this issue. 
 ### Pkg dependencies
 It can cause many issues is the packages are not compatible. Double check pkg dependencies.  
+
+## Issues:
+- Cannot connect to Azure OpenAI service. This can happen when firwarewalls are enabled. try a different network if you run into this issue.  
 
 ## References
 - [Azure OpenAI service](https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart?tabs=command-line&pivots=programming-language-studio)
