@@ -13,7 +13,7 @@ There are many examples on how to use Open AI services with different tools. The
 - langchain 
 - databricks SQL warehouse to chat with your existing datasets. 
 
-It expriments general Azure OpenAI Chat GPT-3 and GPT-4 models.  
+It expriments general purpose and chat version Azure OpenAI GPT-3 and GPT-4 models.  
 
 For vector DB, Chroma db is used and huggingface embeddings are used for creating vectors for documents.   
 
